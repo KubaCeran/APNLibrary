@@ -23,15 +23,7 @@ namespace APNLibrary.Services
             _memoryCache = memoryCache;
         }
 
-        /// <summary>
-        /// Sends asynchronous POST request to the api. Throws an exception when the request failed or response status code wasn't 200.
-        /// </summary>
-        /// <param name="book">Book to be added</param>
-        /// <param name="token">Auth token from the api</param>
-        /// <returns>The task object representing asynchronous operation.</returns>
-        /// <exception cref="HttpRequestException">Thrown when response status code wasn't 200.</exception>
-        /// <exception cref="InvalidOperationException">Thrown when the request failed.</exception>
-        /// <exception cref="TaskCanceledException">Thrown when the request failed.</exception>
+        /// <inheritdoc/>
         public async Task AddBookAsync(Book book, string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
@@ -41,15 +33,7 @@ namespace APNLibrary.Services
             response.EnsureSuccessStatusCode();
         }
 
-        /// <summary>
-        /// Sends asynchronous GET request to the api. Throws an exception when the request failed or response status code wasn't 200.
-        /// </summary>
-        /// <param name="token">Auth token from the api</param>
-        /// <returns>The task object representing asynchronous operation.</returns>
-        /// <exception cref="HttpRequestException">Thrown when response status code wasn't 200.</exception>
-        /// <exception cref="InvalidOperationException">Thrown when the request failed.</exception>
-        /// <exception cref="TaskCanceledException">Thrown when the request failed.</exception>
-        /// <exception cref="JsonException">Thrown when te response stream could not be parsed to desired object.</exception>
+        /// <inheritdoc/>
         public async Task<IEnumerable<Book>> GetBooksAsync(string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
@@ -63,15 +47,7 @@ namespace APNLibrary.Services
                 ?? throw new JsonException("Could not parse the response from api");
         }
 
-        /// <summary>
-        /// Sends asynchronous GET request to the api. Throws an exception when the request failed or response status code wasn't 200.
-        /// </summary>
-        /// <param name="token">Auth token from the api</param>
-        /// <returns>The task object representing asynchronous operation.</returns>
-        /// <exception cref="HttpRequestException">Thrown when response status code wasn't 200.</exception>
-        /// <exception cref="InvalidOperationException">Thrown when the request failed.</exception>
-        /// <exception cref="TaskCanceledException">Thrown when the request failed.</exception>
-        /// <exception cref="JsonException">Thrown when te response stream could not be parsed to desired object.</exception>
+        /// <inheritdoc/>
         public async Task<PagedList<Order>> GetOrdersAsync(string token, int pageSize = 25, int pageNumber = 1)
         {
             if (_memoryCache.TryGetValue("orders", out IEnumerable<Order>? cachedOrders) && cachedOrders is not null)
@@ -94,10 +70,7 @@ namespace APNLibrary.Services
             return PagedList<Order>.Create(orders, pageSize, pageNumber);
         }
 
-        /// <summary>
-        /// A method that mimics retrieving a token.
-        /// </summary>
-        /// <returns>A token from the api</returns>
+        /// <inheritdoc/>
         public async Task<string> GetTokenAsync()
         {
             return await Task.FromResult("exampleToken");
