@@ -63,7 +63,7 @@ namespace APNLibrary.Services
             var orders =  await JsonSerializer.DeserializeAsync<IEnumerable<Order>>(responseStream, options)
                 ?? throw new JsonException("Could not parse the response from api");
 
-            var cacheEntryOptions = new MemoryCacheEntryOptions().SetSlidingExpiration(TimeSpan.FromMinutes(60));
+            var cacheEntryOptions = new MemoryCacheEntryOptions().SetSlidingExpiration(TimeSpan.FromMinutes(5));
 
             _memoryCache.Set("orders", orders, cacheEntryOptions);
 
