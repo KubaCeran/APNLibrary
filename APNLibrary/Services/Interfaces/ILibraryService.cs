@@ -10,7 +10,7 @@ namespace APNLibrary.Services.Interfaces
         /// Sends asynchronous GET request to the api. Throws an exception when the request failed or response status code wasn't 200.
         /// </summary>
         /// <param name="token">Auth token from the api</param>
-        /// <returns>The task object representing asynchronous operation.</returns>
+        /// <returns>A task object representing the asynchronous operation. The task result contains an <see cref="IEnumerable{T}"/> of <see cref="Book"/> objects.</returns>
         /// <exception cref="HttpRequestException">Thrown when response status code wasn't 200.</exception>
         /// <exception cref="InvalidOperationException">Thrown when the request failed.</exception>
         /// <exception cref="TaskCanceledException">Thrown when the request failed.</exception>
@@ -21,7 +21,9 @@ namespace APNLibrary.Services.Interfaces
         /// Sends asynchronous GET request to the api. Throws an exception when the request failed or response status code wasn't 200.
         /// </summary>
         /// <param name="token">Auth token from the api</param>
-        /// <returns>The task object representing asynchronous operation.</returns>
+        /// <param name="pageSize">The size of each page.</param>
+        /// <param name="pageNumber">The page number to retrieve.</param>
+        /// <returns>A task object representing the asynchronous operation. The task result contains a <see cref="PagedList{T}"/> of <see cref="Order"/> objects.</returns>
         /// <exception cref="HttpRequestException">Thrown when response status code wasn't 200.</exception>
         /// <exception cref="InvalidOperationException">Thrown when the request failed.</exception>
         /// <exception cref="TaskCanceledException">Thrown when the request failed.</exception>
