@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APNLibrary", "APNLibrary\APNLibrary.csproj", "{11654E78-5EBC-414C-9FAB-80E45F4C9ED4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APNLibraryTests", "APNLibraryTests\APNLibraryTests.csproj", "{DAC3AB43-3D90-4A34-80F6-85DEF6A7A4C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{11654E78-5EBC-414C-9FAB-80E45F4C9ED4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11654E78-5EBC-414C-9FAB-80E45F4C9ED4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11654E78-5EBC-414C-9FAB-80E45F4C9ED4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAC3AB43-3D90-4A34-80F6-85DEF6A7A4C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAC3AB43-3D90-4A34-80F6-85DEF6A7A4C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAC3AB43-3D90-4A34-80F6-85DEF6A7A4C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAC3AB43-3D90-4A34-80F6-85DEF6A7A4C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
