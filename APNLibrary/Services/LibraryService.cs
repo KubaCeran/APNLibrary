@@ -59,7 +59,8 @@ namespace APNLibrary.Services
 
             using var responseStream = await response.Content.ReadAsStreamAsync();
             var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-            return await JsonSerializer.DeserializeAsync<IEnumerable<Book>>(responseStream, options) ?? throw new JsonException("Could not parse the response from api");
+            return await JsonSerializer.DeserializeAsync<IEnumerable<Book>>(responseStream, options)
+                ?? throw new JsonException("Could not parse the response from api");
         }
 
         /// <summary>
@@ -83,7 +84,8 @@ namespace APNLibrary.Services
 
             using var responseStream = await response.Content.ReadAsStreamAsync();
             var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-            var orders =  await JsonSerializer.DeserializeAsync<IEnumerable<Order>>(responseStream, options) ?? throw new JsonException("Could not parse the response from api");
+            var orders =  await JsonSerializer.DeserializeAsync<IEnumerable<Order>>(responseStream, options)
+                ?? throw new JsonException("Could not parse the response from api");
 
             var cacheEntryOptions = new MemoryCacheEntryOptions().SetSlidingExpiration(TimeSpan.FromMinutes(60));
 
