@@ -16,10 +16,10 @@ Register service in DI container. For .NET built in container use:
 ```csharp
 builder.Services.AddHttpClient();
 builder.Services.AddMemoryCache();
-builder.Services.AddScoped<ILibraryService>(service =>
+builder.Services.AddScoped<ILibraryService>(provider =>
 {
-    var httpClientFactory = service.GetRequiredService<IHttpClientFactory>();
-    var memoryCache = service.GetRequiredService<IMemoryCache>();
+    var httpClientFactory = provider.GetRequiredService<IHttpClientFactory>();
+    var memoryCache = provider.GetRequiredService<IMemoryCache>();
     var baseUrl = "<YOUR_API_URL>";
 
     return new LibraryService(httpClientFactory, memoryCache, baseUrl);
