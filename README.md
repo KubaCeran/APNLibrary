@@ -1,4 +1,4 @@
-# APNLibrary ![NuGet Version](https://img.shields.io/nuget/v/APNLibrary)
+# APNLibrary <img alt="NuGet Version" src="https://img.shields.io/nuget/v/APNLibrary?link=https%3A%2F%2Fwww.nuget.org%2Fpackages%2FAPNLibrary%2F%23readme-body-tab">
 
 A library service that uses an external API.
 
