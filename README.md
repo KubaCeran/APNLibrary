@@ -26,7 +26,7 @@ builder.Services.AddScoped<ILibraryService>(service =>
 });
 ```
 
-Than you can use provided methods in your services simply by dependency injection.
+Then you can use provided methods in your services simply by dependency injection.
 
 ```csharp
 public class TestService
